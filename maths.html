@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edureach | Mathematics Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="maths-page">
+  <main class="maths-shell">
+    <section class="subjects section maths-stage" id="subjects">
+      <nav class="maths-topbar fade-up delay-1">
+        <a class="maths-backlink" href="index.html">Back to Home</a>
+        <span class="maths-mini-badge">Free Maths Learning</span>
+      </nav>
+
+      <div class="section-heading fade-up delay-1">
+        <p class="eyebrow">Study Areas</p>
+        <h2>Subject sections made clear for everyday learning.</h2>
+      </div>
+
+      <div class="subjects-grid">
+        <article class="subject-card fade-up delay-1" onclick="toggleMathsContent()">
+          <span>01</span>
+          <h3>Mathematics</h3>
+          <p>Click here to view maths notes, learning videos, and quick revision support.</p>
+        </article>
+      </div>
+
+      <div id="maths-content" class="maths-content show">
+        <div class="maths-header">
+          <div class="maths-header-copy">
+            <p class="eyebrow">Mathematics Hub</p>
+            <h3>Notes and videos arranged for clear learning.</h3>
+            <p class="maths-intro">
+              Start with notes for quick understanding, then move to the videos for step-by-step explanation.
+            </p>
+          </div>
+
+          <div class="maths-highlights">
+            <div class="maths-highlight">
+              <strong>3</strong>
+              <span>Revision Notes</span>
+            </div>
+            <div class="maths-highlight">
+              <strong>2</strong>
+              <span>Topic Videos</span>
+            </div>
+            <div class="maths-highlight">
+              <strong>Easy</strong>
+              <span>Student Friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="maths-grid">
+          <div class="maths-panel">
+            <h3>Mathematics Notes</h3>
+            <ul class="notes-list">
+              <li>
+                <a href="notes/algebra.pdf" target="_blank">
+                  <span class="note-icon">A</span>
+                  <span class="note-copy">
+                    <strong>Algebra Notes</strong>
+                    <small>Expressions, variables, and equations in simple steps.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="notes/geometry.pdf" target="_blank">
+                  <span class="note-icon">G</span>
+                  <span class="note-copy">
+                    <strong>Geometry Notes</strong>
+                    <small>Important shapes, angles, and diagram-based ideas.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="notes/trigonometry.pdf" target="_blank">
+                  <span class="note-icon">T</span>
+                  <span class="note-copy">
+                    <strong>Trigonometry Notes</strong>
+                    <small>Basic ratios and formulas for easier revision.</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="maths-panel">
+            <div class="video-heading">
+              <h3>Mathematics Videos</h3>
+              <p>Watch topic-wise explanations for better understanding.</p>
+            </div>
+
+            <div class="video-grid">
+              <article class="video-card">
+                <div class="video-card-top">
+                  <span class="video-tag">Algebra</span>
+                  <h4>Algebra Basics</h4>
+                  <p>Clear explanation of expressions, variables, and simple equations.</p>
+                </div>
+                <video controls>
+                  <source src="videos/algebra.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </article>
+
+              <article class="video-card">
+                <div class="video-card-top">
+                  <span class="video-tag">Geometry</span>
+                  <h4>Geometry Basics</h4>
+                  <p>Shapes, angles, and simple properties explained in an easy way.</p>
+                </div>
+                <video controls>
+                  <source src="videos/geometry.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    function toggleMathsContent() {
+      document.getElementById("maths-content").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>
