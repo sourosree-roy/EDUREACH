@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edureach | Mindmap Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="mindmap-viewer-page">
+  <main class="mindmap-viewer-shell">
+    <section class="mindmap-viewer-card">
+      <span class="mindmap-viewer-badge">Mindmap Attachment Slot</span>
+      <h1 id="viewer-title">Mindmap</h1>
+      <p id="viewer-text">Attach your mindmap file here later.</p>
+      <p class="mindmap-viewer-note">
+        Replace this page or update the link target when your final mindmap PDF, image, or HTML file is ready.
+      </p>
+      <a class="mindmap-viewer-back" href="index.html">Back to Home</a>
+    </section>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const subject = (params.get("subject") || "subject").replace(/-/g, " ");
+    const topic = (params.get("topic") || "topic").replace(/-/g, " ");
+
+    const pretty = (value) => value.replace(/\b\w/g, (match) => match.toUpperCase());
+
+    document.getElementById("viewer-title").textContent = `${pretty(subject)}: ${pretty(topic)}`;
+    document.getElementById("viewer-text").textContent =
+      `This is the placeholder page for the ${pretty(topic)} mindmap in ${pretty(subject)}.`;
+  </script>
+</body>
+</html>

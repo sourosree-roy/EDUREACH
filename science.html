@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edureach | Science Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="science-page">
+  <main class="science-shell">
+    <section class="subjects section maths-stage" id="subjects">
+      <nav class="maths-topbar fade-up delay-1">
+        <a class="maths-backlink" href="index.html">Back to Home</a>
+        <span class="maths-mini-badge science-badge">Free Science Learning</span>
+      </nav>
+
+      <div class="section-heading fade-up delay-1">
+        <p class="eyebrow">Study Areas</p>
+        <h2>Science units arranged clearly for simple learning.</h2>
+      </div>
+
+      <div class="subjects-grid">
+        <article class="subject-card fade-up delay-1" onclick="toggleScienceContent()">
+          <span>02</span>
+          <h3>Science</h3>
+          <p>Click here to view science units, topics, and quick revision support.</p>
+        </article>
+      </div>
+
+      <div id="science-content" class="maths-content show">
+        <div class="maths-header">
+          <div class="maths-header-copy">
+            <p class="eyebrow">Science Hub</p>
+            <h3>Units arranged for concept-wise understanding.</h3>
+            <p class="maths-intro">
+              Use the unit list for chapter order, then click a unit button to view the main ideas inside it.
+            </p>
+          </div>
+
+          <div class="maths-highlights">
+            <div class="maths-highlight">
+              <strong>5</strong>
+              <span>Science Units</span>
+            </div>
+            <div class="maths-highlight">
+              <strong>1</strong>
+              <span>Unit Explorer</span>
+            </div>
+            <div class="maths-highlight">
+              <strong>Easy</strong>
+              <span>Student Friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="maths-grid">
+          <div class="maths-panel">
+            <h3>Science Units</h3>
+            <ul class="notes-list">
+              <li>
+                <a href="#">
+                  <span class="note-icon science-icon">I</span>
+                  <span class="note-copy">
+                    <strong>Unit I: Chemical Substances - Nature and Behaviour</strong>
+                    <small>Matter, atoms, reactions, and how substances change.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon science-icon">II</span>
+                  <span class="note-copy">
+                    <strong>Unit II: World of Living</strong>
+                    <small>Life processes, control, reproduction, and heredity.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon science-icon">III</span>
+                  <span class="note-copy">
+                    <strong>Unit III: Natural Phenomena</strong>
+                    <small>Light, reflection, refraction, and related natural effects.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon science-icon">IV</span>
+                  <span class="note-copy">
+                    <strong>Unit IV: Effects of Current</strong>
+                    <small>Electric current, heating, magnetic effects, and uses.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon science-icon">V</span>
+                  <span class="note-copy">
+                    <strong>Unit V: Natural Resources</strong>
+                    <small>Air, water, environment, and resource protection.</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="maths-panel">
+            <div class="mindmap-heading">
+              <h3>Science Unit Explorer</h3>
+              <p>Click a unit button to view the main topics inside that unit.</p>
+            </div>
+
+            <div class="mindmap-board science-board">
+              <div class="mindmap-buttons" aria-label="Science units">
+                <a class="mindmap-topic science-topic active" href="mindmap-viewer.html?subject=science&topic=unit1" target="_blank" rel="noopener noreferrer" onclick="selectScienceUnit('unit1', this)">Unit I</a>
+                <a class="mindmap-topic science-topic" href="mindmap-viewer.html?subject=science&topic=unit2" target="_blank" rel="noopener noreferrer" onclick="selectScienceUnit('unit2', this)">Unit II</a>
+                <a class="mindmap-topic science-topic" href="mindmap-viewer.html?subject=science&topic=unit3" target="_blank" rel="noopener noreferrer" onclick="selectScienceUnit('unit3', this)">Unit III</a>
+                <a class="mindmap-topic science-topic" href="mindmap-viewer.html?subject=science&topic=unit4" target="_blank" rel="noopener noreferrer" onclick="selectScienceUnit('unit4', this)">Unit IV</a>
+                <a class="mindmap-topic science-topic" href="mindmap-viewer.html?subject=science&topic=unit5" target="_blank" rel="noopener noreferrer" onclick="selectScienceUnit('unit5', this)">Unit V</a>
+              </div>
+
+              <div class="mindmap-display science-display">
+                <div class="mindmap-display-head">
+                  <span class="mindmap-badge science-display-badge">Unit View</span>
+                  <h4 id="science-title">Chemical Substances - Nature and Behaviour</h4>
+                  <p id="science-summary">Build a strong base in matter, atoms, and chemical reactions.</p>
+                </div>
+
+                <div class="mindmap-flow">
+                  <div class="mindmap-node root-node science-root" id="science-root">Unit I</div>
+                  <div class="mindmap-children" id="science-children">
+                    <div class="mindmap-node child-node science-child">Matter</div>
+                    <div class="mindmap-node child-node science-child">Atoms and Molecules</div>
+                    <div class="mindmap-node child-node science-child">Chemical Reactions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const scienceUnitData = {
+      unit1: {
+        title: "Chemical Substances - Nature and Behaviour",
+        summary: "Build a strong base in matter, atoms, and chemical reactions.",
+        root: "Unit I",
+        children: ["Matter", "Atoms and Molecules", "Chemical Reactions"]
+      },
+      unit2: {
+        title: "World of Living",
+        summary: "Understand living systems through body functions and heredity.",
+        root: "Unit II",
+        children: ["Life Processes", "Control and Coordination", "Heredity"]
+      },
+      unit3: {
+        title: "Natural Phenomena",
+        summary: "Explore how light and natural effects help us understand the world.",
+        root: "Unit III",
+        children: ["Light", "Reflection and Refraction", "Human Eye"]
+      },
+      unit4: {
+        title: "Effects of Current",
+        summary: "Learn how electric current creates useful heating and magnetic effects.",
+        root: "Unit IV",
+        children: ["Electric Current", "Heating Effect", "Magnetic Effect"]
+      },
+      unit5: {
+        title: "Natural Resources",
+        summary: "Focus on protecting the environment and using resources wisely.",
+        root: "Unit V",
+        children: ["Air", "Water", "Resource Management"]
+      }
+    };
+
+    function toggleScienceContent() {
+      document.getElementById("science-content").classList.toggle("show");
+    }
+
+    function selectScienceUnit(unit, button) {
+      const data = scienceUnitData[unit];
+      if (!data) return;
+
+      document.getElementById("science-title").textContent = data.title;
+      document.getElementById("science-summary").textContent = data.summary;
+      document.getElementById("science-root").textContent = data.root;
+      document.getElementById("science-children").innerHTML = data.children
+        .map((item) => `<div class="mindmap-node child-node science-child">${item}</div>`)
+        .join("");
+
+      document.querySelectorAll(".science-topic").forEach((unitButton) => {
+        unitButton.classList.remove("active");
+      });
+
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>

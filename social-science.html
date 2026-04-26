@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edureach | Social Science Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="social-page">
+  <main class="social-shell">
+    <div class="social-motifs" aria-hidden="true">
+      <span class="motif motif-compass">Compass</span>
+      <span class="motif motif-map">Map</span>
+      <span class="motif motif-pillars">Civics</span>
+      <span class="motif motif-coins">Economics</span>
+    </div>
+
+    <section class="subjects section maths-stage" id="subjects">
+      <nav class="maths-topbar fade-up delay-1">
+        <a class="maths-backlink social-backlink" href="index.html">Back to Home</a>
+        <span class="maths-mini-badge social-badge">Free Social Science Learning</span>
+      </nav>
+
+      <div class="section-heading fade-up delay-1">
+        <p class="eyebrow">Study Areas</p>
+        <h2>Social Science sections arranged for clear and connected learning.</h2>
+      </div>
+
+      <div class="subjects-grid">
+        <article class="subject-card fade-up delay-1" onclick="toggleSocialContent()">
+          <span>04</span>
+          <h3>Social Science</h3>
+          <p>Click here to view history, geography, civics, and economics sections.</p>
+        </article>
+      </div>
+
+      <div id="social-content" class="maths-content show social-content">
+        <div class="maths-header social-header">
+          <div class="maths-header-copy">
+            <p class="eyebrow">Social Science Hub</p>
+            <h3>Subjects arranged for connected understanding of society and the world.</h3>
+            <p class="maths-intro">
+              Move across history, geography, civics, and economics through one organized section made for revision.
+            </p>
+          </div>
+
+          <div class="maths-highlights">
+            <div class="maths-highlight social-highlight">
+              <strong>4</strong>
+              <span>Main Subjects</span>
+            </div>
+            <div class="maths-highlight social-highlight">
+              <strong>1</strong>
+              <span>Section Explorer</span>
+            </div>
+            <div class="maths-highlight social-highlight">
+              <strong>Clear</strong>
+              <span>Chapter Friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="maths-grid">
+          <div class="maths-panel social-panel">
+            <h3>Social Science Divisions</h3>
+            <ul class="notes-list">
+              <li>
+                <a href="#">
+                  <span class="note-icon social-icon">H</span>
+                  <span class="note-copy">
+                    <strong>History</strong>
+                    <small>Important events, movements, and stories from the past.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon social-icon">G</span>
+                  <span class="note-copy">
+                    <strong>Geography</strong>
+                    <small>Maps, resources, environment, and the physical world.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon social-icon">C</span>
+                  <span class="note-copy">
+                    <strong>Civics</strong>
+                    <small>Government, rights, democracy, and citizenship learning.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon social-icon">E</span>
+                  <span class="note-copy">
+                    <strong>Economics</strong>
+                    <small>Money, development, work, and everyday economic ideas.</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="maths-panel social-panel">
+            <div class="mindmap-heading">
+              <h3>Social Science Explorer</h3>
+              <p>Click a subject button to view the key areas inside that subject.</p>
+            </div>
+
+            <div class="mindmap-board social-board">
+              <div class="mindmap-buttons social-buttons" aria-label="Social science subjects">
+                <a class="mindmap-topic social-topic active" href="mindmap-viewer.html?subject=social-science&topic=history" target="_blank" rel="noopener noreferrer" onclick="selectSocialSection('history', this)">History</a>
+                <a class="mindmap-topic social-topic" href="mindmap-viewer.html?subject=social-science&topic=geography" target="_blank" rel="noopener noreferrer" onclick="selectSocialSection('geography', this)">Geography</a>
+                <a class="mindmap-topic social-topic" href="mindmap-viewer.html?subject=social-science&topic=civics" target="_blank" rel="noopener noreferrer" onclick="selectSocialSection('civics', this)">Civics</a>
+                <a class="mindmap-topic social-topic" href="mindmap-viewer.html?subject=social-science&topic=economics" target="_blank" rel="noopener noreferrer" onclick="selectSocialSection('economics', this)">Economics</a>
+              </div>
+
+              <div class="mindmap-display social-display">
+                <div class="mindmap-display-head">
+                  <span class="mindmap-badge social-display-badge">Subject View</span>
+                  <h4 id="social-title">History</h4>
+                  <p id="social-summary">Learn the major events, people, and changes that shaped society.</p>
+                </div>
+
+                <div class="mindmap-flow">
+                  <div class="mindmap-node root-node social-root" id="social-root">History</div>
+                  <div class="mindmap-children" id="social-children">
+                    <div class="mindmap-node child-node social-child">Nationalism</div>
+                    <div class="mindmap-node child-node social-child">Industrialisation</div>
+                    <div class="mindmap-node child-node social-child">Print Culture</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const socialSectionData = {
+      history: {
+        title: "History",
+        summary: "Learn the major events, people, and changes that shaped society.",
+        root: "History",
+        children: ["Nationalism", "Industrialisation", "Print Culture"]
+      },
+      geography: {
+        title: "Geography",
+        summary: "Understand land, resources, climate, and how people use the environment.",
+        root: "Geography",
+        children: ["Resources", "Agriculture", "Manufacturing"]
+      },
+      civics: {
+        title: "Civics",
+        summary: "Study democracy, institutions, and the role of citizens in society.",
+        root: "Civics",
+        children: ["Power Sharing", "Political Parties", "Outcomes of Democracy"]
+      },
+      economics: {
+        title: "Economics",
+        summary: "Connect work, money, development, and economic life in simple terms.",
+        root: "Economics",
+        children: ["Development", "Sectors of Economy", "Money and Credit"]
+      }
+    };
+
+    function toggleSocialContent() {
+      document.getElementById("social-content").classList.toggle("show");
+    }
+
+    function selectSocialSection(section, button) {
+      const data = socialSectionData[section];
+      if (!data) return;
+
+      document.getElementById("social-title").textContent = data.title;
+      document.getElementById("social-summary").textContent = data.summary;
+      document.getElementById("social-root").textContent = data.root;
+      document.getElementById("social-children").innerHTML = data.children
+        .map((item) => `<div class="mindmap-node child-node social-child">${item}</div>`)
+        .join("");
+
+      document.querySelectorAll(".social-topic").forEach((sectionButton) => {
+        sectionButton.classList.remove("active");
+      });
+
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>

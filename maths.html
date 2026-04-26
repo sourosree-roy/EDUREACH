@@ -26,7 +26,7 @@
         <article class="subject-card fade-up delay-1" onclick="toggleMathsContent()">
           <span>01</span>
           <h3>Mathematics</h3>
-          <p>Click here to view maths notes, learning videos, and quick revision support.</p>
+          <p>Click here to view maths notes, mindmaps, and quick revision support.</p>
         </article>
       </div>
 
@@ -34,9 +34,9 @@
         <div class="maths-header">
           <div class="maths-header-copy">
             <p class="eyebrow">Mathematics Hub</p>
-            <h3>Notes and videos arranged for clear learning.</h3>
+            <h3>Notes and mindmaps arranged for clear learning.</h3>
             <p class="maths-intro">
-              Start with notes for quick understanding, then move to the videos for step-by-step explanation.
+              Start with notes for quick understanding, then use the mindmap to connect ideas and revise faster.
             </p>
           </div>
 
@@ -46,8 +46,8 @@
               <span>Revision Notes</span>
             </div>
             <div class="maths-highlight">
-              <strong>2</strong>
-              <span>Topic Videos</span>
+              <strong>1</strong>
+              <span>Mindmap Board</span>
             </div>
             <div class="maths-highlight">
               <strong>Easy</strong>
@@ -87,39 +87,58 @@
                   </span>
                 </a>
               </li>
+              <li>
+                <a href="notes/arithmetic.pdf" target="_blank">
+                  <span class="note-icon">R</span>
+                  <span class="note-copy">
+                    <strong>Arithmetic Notes</strong>
+                    <small>Percentages, averages, and daily-use number concepts.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="notes/graphs.pdf" target="_blank">
+                  <span class="note-icon">P</span>
+                  <span class="note-copy">
+                    <strong>Graphs Notes</strong>
+                    <small>Coordinates, plotting, and line-based understanding.</small>
+                  </span>
+                </a>
+              </li>
             </ul>
           </div>
 
           <div class="maths-panel">
-            <div class="video-heading">
-              <h3>Mathematics Videos</h3>
-              <p>Watch topic-wise explanations for better understanding.</p>
+            <div class="mindmap-heading">
+              <h3>Mathematics Mindmap</h3>
+              <p>Choose a topic button to view a clean, organized mindmap.</p>
             </div>
 
-            <div class="video-grid">
-              <article class="video-card">
-                <div class="video-card-top">
-                  <span class="video-tag">Algebra</span>
-                  <h4>Algebra Basics</h4>
-                  <p>Clear explanation of expressions, variables, and simple equations.</p>
-                </div>
-                <video controls>
-                  <source src="videos/algebra.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </article>
+            <div class="mindmap-board">
+              <div class="mindmap-buttons" aria-label="Mathematics topics">
+                <a class="mindmap-topic active" href="mindmap-viewer.html?subject=maths&topic=algebra" target="_blank" rel="noopener noreferrer" onclick="selectMindmap('algebra', this)">Algebra</a>
+                <a class="mindmap-topic" href="mindmap-viewer.html?subject=maths&topic=geometry" target="_blank" rel="noopener noreferrer" onclick="selectMindmap('geometry', this)">Geometry</a>
+                <a class="mindmap-topic" href="mindmap-viewer.html?subject=maths&topic=trigonometry" target="_blank" rel="noopener noreferrer" onclick="selectMindmap('trigonometry', this)">Trigonometry</a>
+                <a class="mindmap-topic" href="mindmap-viewer.html?subject=maths&topic=arithmetic" target="_blank" rel="noopener noreferrer" onclick="selectMindmap('arithmetic', this)">Arithmetic</a>
+                <a class="mindmap-topic" href="mindmap-viewer.html?subject=maths&topic=graphs" target="_blank" rel="noopener noreferrer" onclick="selectMindmap('graphs', this)">Graphs</a>
+              </div>
 
-              <article class="video-card">
-                <div class="video-card-top">
-                  <span class="video-tag">Geometry</span>
-                  <h4>Geometry Basics</h4>
-                  <p>Shapes, angles, and simple properties explained in an easy way.</p>
+              <div class="mindmap-display">
+                <div class="mindmap-display-head">
+                  <span class="mindmap-badge">Mindmap View</span>
+                  <h4 id="mindmap-title">Algebra</h4>
+                  <p id="mindmap-summary">Understand how expressions, variables, and equations connect.</p>
                 </div>
-                <video controls>
-                  <source src="videos/geometry.mp4" type="video/mp4">
-                  Your browser does not support the video tag.
-                </video>
-              </article>
+
+                <div class="mindmap-flow">
+                  <div class="mindmap-node root-node" id="mindmap-root">Algebra</div>
+                  <div class="mindmap-children" id="mindmap-children">
+                    <div class="mindmap-node child-node">Variables</div>
+                    <div class="mindmap-node child-node">Expressions</div>
+                    <div class="mindmap-node child-node">Linear Equations</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -128,8 +147,61 @@
   </main>
 
   <script>
+    const mindmapData = {
+      algebra: {
+        title: "Algebra",
+        summary: "Understand how expressions, variables, and equations connect.",
+        root: "Algebra",
+        children: ["Variables", "Expressions", "Linear Equations"]
+      },
+      geometry: {
+        title: "Geometry",
+        summary: "See how shapes, lines, and angles are linked in one topic.",
+        root: "Geometry",
+        children: ["Shapes", "Angles", "Constructions"]
+      },
+      trigonometry: {
+        title: "Trigonometry",
+        summary: "Connect triangle ratios with identities and formula use.",
+        root: "Trigonometry",
+        children: ["Ratios", "Identities", "Formulas"]
+      },
+      arithmetic: {
+        title: "Arithmetic",
+        summary: "Revise everyday number topics in a simple linked flow.",
+        root: "Arithmetic",
+        children: ["Percentages", "Profit and Loss", "Averages"]
+      },
+      graphs: {
+        title: "Graphs",
+        summary: "Organize graph ideas from coordinates to straight lines.",
+        root: "Graphs",
+        children: ["Coordinates", "Plotting", "Lines"]
+      }
+    };
+
     function toggleMathsContent() {
       document.getElementById("maths-content").classList.toggle("show");
+    }
+
+    function selectMindmap(topic, button) {
+      const data = mindmapData[topic];
+      if (!data) return;
+
+      document.getElementById("mindmap-title").textContent = data.title;
+      document.getElementById("mindmap-summary").textContent = data.summary;
+      document.getElementById("mindmap-root").textContent = data.root;
+      document.getElementById("mindmap-children").innerHTML = data.children
+        .map((item) => `<div class="mindmap-node child-node">${item}</div>`)
+        .join("");
+
+      document.querySelectorAll(".mindmap-topic").forEach((topicButton) => {
+        topicButton.classList.remove("active");
+      });
+
+      if (button) {
+        button.classList.add("active");
+      }
     }
   </script>
 </body>

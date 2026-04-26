@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edureach | English Resources</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="english-page">
+  <main class="english-shell">
+    <div class="english-letters" aria-hidden="true">
+      <span>A</span>
+      <span>B</span>
+      <span>C</span>
+      <span>D</span>
+      <span>E</span>
+      <span>F</span>
+      <span>G</span>
+      <span>H</span>
+      <span>I</span>
+      <span>J</span>
+      <span>K</span>
+      <span>L</span>
+    </div>
+
+    <section class="subjects section maths-stage" id="subjects">
+      <nav class="maths-topbar fade-up delay-1">
+        <a class="maths-backlink english-backlink" href="index.html">Back to Home</a>
+        <span class="maths-mini-badge english-badge">Free English Learning</span>
+      </nav>
+
+      <div class="section-heading fade-up delay-1">
+        <p class="eyebrow">Study Areas</p>
+        <h2>English sections arranged for reading, writing, and literature.</h2>
+      </div>
+
+      <div class="subjects-grid">
+        <article class="subject-card fade-up delay-1" onclick="toggleEnglishContent()">
+          <span>03</span>
+          <h3>English</h3>
+          <p>Click here to view reading, writing, grammar, and literature sections.</p>
+        </article>
+      </div>
+
+      <div id="english-content" class="maths-content show english-content">
+        <div class="maths-header english-header">
+          <div class="maths-header-copy">
+            <p class="eyebrow">English Hub</p>
+            <h3>Skills and literature sections arranged clearly.</h3>
+            <p class="maths-intro">
+              Start with reading and writing skills, then move into literature units for prose and poetry revision.
+            </p>
+          </div>
+
+          <div class="maths-highlights">
+            <div class="maths-highlight english-highlight">
+              <strong>3</strong>
+              <span>Main Sections</span>
+            </div>
+            <div class="maths-highlight english-highlight">
+              <strong>2</strong>
+              <span>Literature Books</span>
+            </div>
+            <div class="maths-highlight english-highlight">
+              <strong>Easy</strong>
+              <span>Reader Friendly</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="maths-grid">
+          <div class="maths-panel english-panel">
+            <h3>English Sections</h3>
+            <ul class="notes-list">
+              <li>
+                <a href="#">
+                  <span class="note-icon english-icon">A</span>
+                  <span class="note-copy">
+                    <strong>Section A: Reading Skills</strong>
+                    <small>Reading comprehension, meaning, and careful understanding.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon english-icon">B</span>
+                  <span class="note-copy">
+                    <strong>Section B: Writing Skills with Grammar</strong>
+                    <small>Writing formats, grammar rules, and sentence correction.</small>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <span class="note-icon english-icon">C</span>
+                  <span class="note-copy">
+                    <strong>Section C: Language through Literature</strong>
+                    <small>Textbook-based learning through chapters, prose, and poetry.</small>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="maths-panel english-panel">
+            <div class="mindmap-heading">
+              <h3>Literature Explorer</h3>
+              <p>Click a literature button to view how the English literature section is organized.</p>
+            </div>
+
+            <div class="mindmap-board english-board">
+              <div class="mindmap-buttons english-buttons" aria-label="English literature sections">
+                <a class="mindmap-topic english-topic active" href="mindmap-viewer.html?subject=english&topic=first-flight" target="_blank" rel="noopener noreferrer" onclick="selectEnglishSection('firstFlight', this)">First Flight</a>
+                <a class="mindmap-topic english-topic" href="mindmap-viewer.html?subject=english&topic=prose" target="_blank" rel="noopener noreferrer" onclick="selectEnglishSection('prose', this)">Prose</a>
+                <a class="mindmap-topic english-topic" href="mindmap-viewer.html?subject=english&topic=poetry" target="_blank" rel="noopener noreferrer" onclick="selectEnglishSection('poetry', this)">Poetry</a>
+                <a class="mindmap-topic english-topic" href="mindmap-viewer.html?subject=english&topic=footprints-without-feet" target="_blank" rel="noopener noreferrer" onclick="selectEnglishSection('footprints', this)">Footprints without feet</a>
+              </div>
+
+              <div class="mindmap-display english-display">
+                <div class="mindmap-display-head">
+                  <span class="mindmap-badge english-display-badge">Section View</span>
+                  <h4 id="english-title">First Flight</h4>
+                  <p id="english-summary">Main literature book with both prose and poetry sections.</p>
+                </div>
+
+                <div class="mindmap-flow">
+                  <div class="mindmap-node root-node english-root" id="english-root">First Flight</div>
+                  <div class="mindmap-children" id="english-children">
+                    <div class="mindmap-node child-node english-child">Prose</div>
+                    <div class="mindmap-node child-node english-child">Poetry</div>
+                    <div class="mindmap-node child-node english-child">Textual Questions</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const englishSectionData = {
+      firstFlight: {
+        title: "First Flight",
+        summary: "Main literature book with both prose and poetry sections.",
+        root: "First Flight",
+        children: ["Prose", "Poetry", "Textual Questions"]
+      },
+      prose: {
+        title: "Prose",
+        summary: "Stories and chapters focused on understanding theme, message, and events.",
+        root: "Prose",
+        children: ["Characters", "Theme", "Important Questions"]
+      },
+      poetry: {
+        title: "Poetry",
+        summary: "Poems with meaning, poetic devices, and central ideas.",
+        root: "Poetry",
+        children: ["Meaning", "Poetic Devices", "Theme"]
+      },
+      footprints: {
+        title: "Footprints without feet",
+        summary: "Supplementary literature with chapter-wise understanding and revision.",
+        root: "Footprints without feet",
+        children: ["Chapter Summary", "Characters", "Revision Points"]
+      }
+    };
+
+    function toggleEnglishContent() {
+      document.getElementById("english-content").classList.toggle("show");
+    }
+
+    function selectEnglishSection(section, button) {
+      const data = englishSectionData[section];
+      if (!data) return;
+
+      document.getElementById("english-title").textContent = data.title;
+      document.getElementById("english-summary").textContent = data.summary;
+      document.getElementById("english-root").textContent = data.root;
+      document.getElementById("english-children").innerHTML = data.children
+        .map((item) => `<div class="mindmap-node child-node english-child">${item}</div>`)
+        .join("");
+
+      document.querySelectorAll(".english-topic").forEach((sectionButton) => {
+        sectionButton.classList.remove("active");
+      });
+
+      if (button) {
+        button.classList.add("active");
+      }
+    }
+  </script>
+</body>
+</html>
